@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "title": "高质量资源导航",
+    "description": "精选开发者必备的高质量网站和工具",
+    "lastUpdate": "2026-02-11",
+    "version": "1.0.0"
+  },
+  "categories": [
+    {
+      "id": "ai-tools",
+      "name": "AI 开发工具",
+      "icon": "🤖",
+      "resources": [
+        {
+          "name": "ClawHub",
+          "url": "https://clawhub.ai",
+          "description": "OpenClaw官方Skills市场，社区贡献的工具和扩展",
+          "tags": ["OpenClaw", "Skills"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "YouSkill",
+          "url": "https://labs.youware.com/youskill",
+          "description": "Skills组合工作流搜索引擎，提供多工具协作方案",
+          "tags": ["工作流", "Skills"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Vercel Skills",
+          "url": "https://github.com/vercel-labs/skills",
+          "description": "Vercel官方Skills仓库，包含find-skills等核心工具",
+          "tags": ["开源", "Skills"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Hugging Face",
+          "url": "https://huggingface.co",
+          "description": "AI模型和数据集，开源社区",
+          "tags": ["AI模型", "数据集"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Papers with Code",
+          "url": "https://paperswithcode.com",
+          "description": "学术论文和代码实现，最新研究进展",
+          "tags": ["论文", "研究"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "developer-community",
+      "name": "开发者社区",
+      "icon": "👥",
+      "resources": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com",
+          "description": "代码托管和协作，开源项目发现",
+          "tags": ["代码托管", "开源"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Stack Overflow",
+          "url": "https://stackoverflow.com",
+          "description": "技术问答社区，问题解决方案",
+          "tags": ["问答", "社区"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Dev.to",
+          "url": "https://dev.to",
+          "description": "开发者博客平台，技术文章和教程",
+          "tags": ["博客", "教程"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "documentation",
+      "name": "技术文档",
+      "icon": "📚",
+      "resources": [
+        {
+          "name": "MDN Web Docs",
+          "url": "https://developer.mozilla.org",
+          "description": "Web开发权威文档，JavaScript、CSS、HTML参考",
+          "tags": ["Web", "文档"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "DevDocs",
+          "url": "https://devdocs.io",
+          "description": "多语言API文档聚合，离线可用",
+          "tags": ["API", "文档"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "tools-frameworks",
+      "name": "工具和框架",
+      "icon": "🛠️",
+      "resources": [
+        {
+          "name": "npm",
+          "url": "https://www.npmjs.com",
+          "description": "Node.js包管理，JavaScript生态系统",
+          "tags": ["Node.js", "包管理"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "PyPI",
+          "url": "https://pypi.org",
+          "description": "Python包索引，Python生态系统",
+          "tags": ["Python", "包管理"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "design-ui",
+      "name": "设计和UI资源",
+      "icon": "🎨",
+      "resources": [
+        {
+          "name": "Dribbble",
+          "url": "https://dribbble.com",
+          "description": "设计灵感，UI/UX案例",
+          "tags": ["设计", "灵感"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Figma Community",
+          "url": "https://www.figma.com/community",
+          "description": "设计资源和模板，协作设计工具",
+          "tags": ["设计", "协作"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "news-trends",
+      "name": "新闻和趋势",
+      "icon": "📰",
+      "resources": [
+        {
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com",
+          "description": "技术新闻聚合，创业和技术讨论",
+          "tags": ["新闻", "讨论"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com",
+          "description": "新产品发现，创新工具展示",
+          "tags": ["产品", "创新"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "cloud-services",
+      "name": "云服务和部署",
+      "icon": "☁️",
+      "resources": [
+        {
+          "name": "百度智能云",
+          "url": "https://cloud.baidu.com",
+          "description": "OpenClaw云端部署，千帆大模型平台",
+          "tags": ["云服务", "AI"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Vercel",
+          "url": "https://vercel.com",
+          "description": "前端部署平台，Serverless函数",
+          "tags": ["部署", "前端"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Railway",
+          "url": "https://railway.app",
+          "description": "应用部署平台，数据库托管",
+          "tags": ["部署", "数据库"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "api-data",
+      "name": "API和数据",
+      "icon": "🔌",
+      "resources": [
+        {
+          "name": "RapidAPI",
+          "url": "https://rapidapi.com",
+          "description": "API市场，第三方服务集成",
+          "tags": ["API", "集成"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        },
+        {
+          "name": "Public APIs",
+          "url": "https://github.com/public-apis/public-apis",
+          "description": "免费公共API列表，各类数据接口",
+          "tags": ["API", "免费"],
+          "status": "active",
+          "addedDate": "2026-02-11",
+          "lastChecked": "2026-02-11"
+        }
+      ]
+    }
+  ]
+}

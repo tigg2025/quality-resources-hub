@@ -82,6 +82,11 @@
             border-color: #667eea;
         }
 
+        .resource-card.inactive {
+            opacity: 0.5;
+            background: #e9ecef;
+        }
+
         .resource-card h3 {
             color: #333;
             font-size: 1.3em;
@@ -116,6 +121,25 @@
             margin-top: 8px;
         }
 
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
         footer {
             background: #f8f9fa;
             padding: 30px;
@@ -142,229 +166,199 @@
         .search-box input:focus {
             border-color: #667eea;
         }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🚀 高质量资源导航</h1>
-            <p>精选开发者必备的高质量网站和工具</p>
+            <p id="description">精选开发者必备的高质量网站和工具</p>
         </header>
 
         <div class="content">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalCount">0</div>
+                    <div class="stat-label">总资源数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="categoryCount">0</div>
+                    <div class="stat-label">分类数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="lastUpdate">-</div>
+                    <div class="stat-label">最后更新</div>
+                </div>
+            </div>
+
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="搜索资源...">
             </div>
 
-            <!-- AI 开发工具 -->
-            <div class="category">
-                <h2>🤖 AI 开发工具</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>ClawHub</h3>
-                        <p>OpenClaw官方Skills市场，社区贡献的工具和扩展</p>
-                        <a href="https://clawhub.ai" target="_blank">clawhub.ai</a>
-                        <div><span class="tag">OpenClaw</span><span class="tag">Skills</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>YouSkill</h3>
-                        <p>Skills组合工作流搜索引擎，提供多工具协作方案</p>
-                        <a href="https://labs.youware.com/youskill" target="_blank">labs.youware.com/youskill</a>
-                        <div><span class="tag">工作流</span><span class="tag">Skills</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Vercel Skills</h3>
-                        <p>Vercel官方Skills仓库，包含find-skills等核心工具</p>
-                        <a href="https://github.com/vercel-labs/skills" target="_blank">github.com/vercel-labs/skills</a>
-                        <div><span class="tag">开源</span><span class="tag">Skills</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Hugging Face</h3>
-                        <p>AI模型和数据集，开源社区</p>
-                        <a href="https://huggingface.co" target="_blank">huggingface.co</a>
-                        <div><span class="tag">AI模型</span><span class="tag">数据集</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Papers with Code</h3>
-                        <p>学术论文和代码实现，最新研究进展</p>
-                        <a href="https://paperswithcode.com" target="_blank">paperswithcode.com</a>
-                        <div><span class="tag">论文</span><span class="tag">研究</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 开发者社区 -->
-            <div class="category">
-                <h2>👥 开发者社区</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>GitHub</h3>
-                        <p>代码托管和协作，开源项目发现</p>
-                        <a href="https://github.com" target="_blank">github.com</a>
-                        <div><span class="tag">代码托管</span><span class="tag">开源</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Stack Overflow</h3>
-                        <p>技术问答社区，问题解决方案</p>
-                        <a href="https://stackoverflow.com" target="_blank">stackoverflow.com</a>
-                        <div><span class="tag">问答</span><span class="tag">社区</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Dev.to</h3>
-                        <p>开发者博客平台，技术文章和教程</p>
-                        <a href="https://dev.to" target="_blank">dev.to</a>
-                        <div><span class="tag">博客</span><span class="tag">教程</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 技术文档 -->
-            <div class="category">
-                <h2>📚 技术文档</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>MDN Web Docs</h3>
-                        <p>Web开发权威文档，JavaScript、CSS、HTML参考</p>
-                        <a href="https://developer.mozilla.org" target="_blank">developer.mozilla.org</a>
-                        <div><span class="tag">Web</span><span class="tag">文档</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>DevDocs</h3>
-                        <p>多语言API文档聚合，离线可用</p>
-                        <a href="https://devdocs.io" target="_blank">devdocs.io</a>
-                        <div><span class="tag">API</span><span class="tag">文档</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 工具和框架 -->
-            <div class="category">
-                <h2>🛠️ 工具和框架</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>npm</h3>
-                        <p>Node.js包管理，JavaScript生态系统</p>
-                        <a href="https://www.npmjs.com" target="_blank">npmjs.com</a>
-                        <div><span class="tag">Node.js</span><span class="tag">包管理</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>PyPI</h3>
-                        <p>Python包索引，Python生态系统</p>
-                        <a href="https://pypi.org" target="_blank">pypi.org</a>
-                        <div><span class="tag">Python</span><span class="tag">包管理</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 设计和UI -->
-            <div class="category">
-                <h2>🎨 设计和UI资源</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>Dribbble</h3>
-                        <p>设计灵感，UI/UX案例</p>
-                        <a href="https://dribbble.com" target="_blank">dribbble.com</a>
-                        <div><span class="tag">设计</span><span class="tag">灵感</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Figma Community</h3>
-                        <p>设计资源和模板，协作设计工具</p>
-                        <a href="https://www.figma.com/community" target="_blank">figma.com/community</a>
-                        <div><span class="tag">设计</span><span class="tag">协作</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 新闻和趋势 -->
-            <div class="category">
-                <h2>📰 新闻和趋势</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>Hacker News</h3>
-                        <p>技术新闻聚合，创业和技术讨论</p>
-                        <a href="https://news.ycombinator.com" target="_blank">news.ycombinator.com</a>
-                        <div><span class="tag">新闻</span><span class="tag">讨论</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Product Hunt</h3>
-                        <p>新产品发现，创新工具展示</p>
-                        <a href="https://www.producthunt.com" target="_blank">producthunt.com</a>
-                        <div><span class="tag">产品</span><span class="tag">创新</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 云服务 -->
-            <div class="category">
-                <h2>☁️ 云服务和部署</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>百度智能云</h3>
-                        <p>OpenClaw云端部署，千帆大模型平台</p>
-                        <a href="https://cloud.baidu.com" target="_blank">cloud.baidu.com</a>
-                        <div><span class="tag">云服务</span><span class="tag">AI</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Vercel</h3>
-                        <p>前端部署平台，Serverless函数</p>
-                        <a href="https://vercel.com" target="_blank">vercel.com</a>
-                        <div><span class="tag">部署</span><span class="tag">前端</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Railway</h3>
-                        <p>应用部署平台，数据库托管</p>
-                        <a href="https://railway.app" target="_blank">railway.app</a>
-                        <div><span class="tag">部署</span><span class="tag">数据库</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- API和数据 -->
-            <div class="category">
-                <h2>🔌 API和数据</h2>
-                <div class="resources">
-                    <div class="resource-card">
-                        <h3>RapidAPI</h3>
-                        <p>API市场，第三方服务集成</p>
-                        <a href="https://rapidapi.com" target="_blank">rapidapi.com</a>
-                        <div><span class="tag">API</span><span class="tag">集成</span></div>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Public APIs</h3>
-                        <p>免费公共API列表，各类数据接口</p>
-                        <a href="https://github.com/public-apis/public-apis" target="_blank">github.com/public-apis/public-apis</a>
-                        <div><span class="tag">API</span><span class="tag">免费</span></div>
-                    </div>
-                </div>
-            </div>
+            <div id="categoriesContainer"></div>
         </div>
 
         <footer>
             <p>💡 持续更新中 | 由 OpenClaw 驱动</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">最后更新：2026-02-11</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                <a href="resources.json" target="_blank" style="color: #667eea; text-decoration: none;">📊 查看数据源</a> | 
+                <a href="https://github.com/tigg2025/quality-resources-hub" target="_blank" style="color: #667eea; text-decoration: none;">💻 GitHub</a>
+            </p>
         </footer>
     </div>
 
     <script>
+        let allResources = [];
+
+        // 加载资源数据
+        async function loadResources() {
+            try {
+                const response = await fetch('resources.json');
+                const data = await response.json();
+                
+                // 更新元数据
+                document.getElementById('description').textContent = data.meta.description;
+                document.getElementById('lastUpdate').textContent = data.meta.lastUpdate;
+                document.getElementById('categoryCount').textContent = data.categories.length;
+                
+                // 计算总资源数
+                let totalCount = 0;
+                data.categories.forEach(cat => {
+                    totalCount += cat.resources.length;
+                });
+                document.getElementById('totalCount').textContent = totalCount;
+                
+                // 渲染分类和资源
+                renderCategories(data.categories);
+                allResources = data.categories;
+                
+            } catch (error) {
+                console.error('加载资源失败:', error);
+                document.getElementById('categoriesContainer').innerHTML = 
+                    '<p style="text-align: center; color: #999;">加载资源失败，请刷新页面重试</p>';
+            }
+        }
+
+        // 渲染分类
+        function renderCategories(categories) {
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = '';
+            
+            categories.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category';
+                categoryDiv.dataset.categoryId = category.id;
+                
+                const title = document.createElement('h2');
+                title.textContent = `${category.icon} ${category.name}`;
+                categoryDiv.appendChild(title);
+                
+                const resourcesDiv = document.createElement('div');
+                resourcesDiv.className = 'resources';
+                
+                category.resources.forEach(resource => {
+                    const card = createResourceCard(resource);
+                    resourcesDiv.appendChild(card);
+                });
+                
+                categoryDiv.appendChild(resourcesDiv);
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        // 创建资源卡片
+        function createResourceCard(resource) {
+            const card = document.createElement('div');
+            card.className = 'resource-card';
+            if (resource.status === 'inactive') {
+                card.classList.add('inactive');
+            }
+            
+            const title = document.createElement('h3');
+            title.textContent = resource.name;
+            
+            // 添加状态标签
+            if (resource.status === 'inactive') {
+                const badge = document.createElement('span');
+                badge.className = 'status-badge status-inactive';
+                badge.textContent = '失效';
+                title.appendChild(badge);
+            }
+            
+            const description = document.createElement('p');
+            description.textContent = resource.description;
+            
+            const link = document.createElement('a');
+            link.href = resource.url;
+            link.target = '_blank';
+            link.textContent = resource.url;
+            
+            const tagsDiv = document.createElement('div');
+            resource.tags.forEach(tag => {
+                const tagSpan = document.createElement('span');
+                tagSpan.className = 'tag';
+                tagSpan.textContent = tag;
+                tagsDiv.appendChild(tagSpan);
+            });
+            
+            card.appendChild(title);
+            card.appendChild(description);
+            card.appendChild(link);
+            card.appendChild(tagsDiv);
+            
+            return card;
+        }
+
         // 搜索功能
-        const searchInput = document.getElementById('searchInput');
-        const resourceCards = document.querySelectorAll('.resource-card');
-
-        searchInput.addEventListener('input', function(e) {
+        document.getElementById('searchInput').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-
-            resourceCards.forEach(card => {
+            const cards = document.querySelectorAll('.resource-card');
+            
+            cards.forEach(card => {
                 const title = card.querySelector('h3').textContent.toLowerCase();
                 const description = card.querySelector('p').textContent.toLowerCase();
-                const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
-
-                if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
+                const tags = Array.from(card.querySelectorAll('.tag'))
+                    .map(tag => tag.textContent.toLowerCase())
+                    .join(' ');
+                
+                if (title.includes(searchTerm) || 
+                    description.includes(searchTerm) || 
+                    tags.includes(searchTerm)) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
                 }
             });
         });
+
+        // 页面加载时加载资源
+        loadResources();
     </script>
 </body>
 </html>
